@@ -95,7 +95,8 @@ alias l='ls -CF'
 # getcourses alias
 function creategetcourses {
 	wget -O page.html https://www.cse.iitb.ac.in/archive/page135 2>file
-	grep -oP "CS[[:blank:]][0-9][0-9][0-9][[:blank:]]" page.html
+	grep -oP "CS[[:blank:]][0-9][0-9][0-9][[:blank:]]" page.html | sort | uniq
+	grep -oP "CS[[:blank:]][0-9][0-9][0-9][[:blank:]][A-Z]" page.html
 	rm page.html
 	rm file
 }
